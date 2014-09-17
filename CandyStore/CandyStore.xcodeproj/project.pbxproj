@@ -10,11 +10,13 @@
 		49BBE78C19C8C05200038698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78B19C8C05200038698 /* main.m */; };
 		49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78E19C8C05200038698 /* AppDelegate.m */; };
 		49BBE79219C8C05200038698 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE79019C8C05200038698 /* CandyStore.xcdatamodeld */; };
-		49BBE79519C8C05200038698 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE79419C8C05200038698 /* ViewController.m */; };
 		49BBE79819C8C05200038698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BBE79619C8C05200038698 /* Main.storyboard */; };
 		49BBE79A19C8C05200038698 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BBE79919C8C05200038698 /* Images.xcassets */; };
 		49BBE79D19C8C05200038698 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BBE79B19C8C05200038698 /* LaunchScreen.xib */; };
 		49BBE7A919C8C05300038698 /* CandyStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE7A819C8C05300038698 /* CandyStoreTests.m */; };
+		49BBE7B419C8C8CE00038698 /* MKSCandyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE7B319C8C8CE00038698 /* MKSCandyTableViewController.m */; };
+		49BBE7B719C8EEB500038698 /* MKSCandyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE7B619C8EEB500038698 /* MKSCandyDetailViewController.m */; };
+		49BBE7C019C8F55900038698 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE7BF19C8F55900038698 /* Candy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,18 @@
 		49BBE78D19C8C05200038698 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49BBE78E19C8C05200038698 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		49BBE79119C8C05200038698 /* CandyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CandyStore.xcdatamodel; sourceTree = "<group>"; };
-		49BBE79319C8C05200038698 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		49BBE79419C8C05200038698 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		49BBE79719C8C05200038698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49BBE79919C8C05200038698 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49BBE79C19C8C05200038698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49BBE7A219C8C05300038698 /* CandyStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BBE7A719C8C05300038698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BBE7A819C8C05300038698 /* CandyStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyStoreTests.m; sourceTree = "<group>"; };
+		49BBE7B219C8C8CE00038698 /* MKSCandyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSCandyTableViewController.h; sourceTree = "<group>"; };
+		49BBE7B319C8C8CE00038698 /* MKSCandyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSCandyTableViewController.m; sourceTree = "<group>"; };
+		49BBE7B519C8EEB500038698 /* MKSCandyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSCandyDetailViewController.h; sourceTree = "<group>"; };
+		49BBE7B619C8EEB500038698 /* MKSCandyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSCandyDetailViewController.m; sourceTree = "<group>"; };
+		49BBE7BE19C8F55900038698 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = "<group>"; };
+		49BBE7BF19C8F55900038698 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,12 @@
 			children = (
 				49BBE78D19C8C05200038698 /* AppDelegate.h */,
 				49BBE78E19C8C05200038698 /* AppDelegate.m */,
-				49BBE79319C8C05200038698 /* ViewController.h */,
-				49BBE79419C8C05200038698 /* ViewController.m */,
+				49BBE7BE19C8F55900038698 /* Candy.h */,
+				49BBE7BF19C8F55900038698 /* Candy.m */,
+				49BBE7B219C8C8CE00038698 /* MKSCandyTableViewController.h */,
+				49BBE7B319C8C8CE00038698 /* MKSCandyTableViewController.m */,
+				49BBE7B519C8EEB500038698 /* MKSCandyDetailViewController.h */,
+				49BBE7B619C8EEB500038698 /* MKSCandyDetailViewController.m */,
 				49BBE79619C8C05200038698 /* Main.storyboard */,
 				49BBE79919C8C05200038698 /* Images.xcassets */,
 				49BBE79B19C8C05200038698 /* LaunchScreen.xib */,
@@ -223,8 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BBE79219C8C05200038698 /* CandyStore.xcdatamodeld in Sources */,
+				49BBE7B719C8EEB500038698 /* MKSCandyDetailViewController.m in Sources */,
+				49BBE7B419C8C8CE00038698 /* MKSCandyTableViewController.m in Sources */,
+				49BBE7C019C8F55900038698 /* Candy.m in Sources */,
 				49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */,
-				49BBE79519C8C05200038698 /* ViewController.m in Sources */,
 				49BBE78C19C8C05200038698 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

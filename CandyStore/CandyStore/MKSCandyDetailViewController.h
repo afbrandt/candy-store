@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MKSCandyDetailViewController.h
 //  CandyStore
 //
 //  Created by Andrew Brandt on 9/16/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MKSCandyDetailViewController : UIViewController
 
+@property (strong, nonatomic) NSString *candy;
 
 @end
-
