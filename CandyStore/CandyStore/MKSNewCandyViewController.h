@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Candy.h"
 
-@interface MKSNewCandyViewController : UIViewController
+@interface MKSNewCandyViewController : UIViewController<UIImagePickerControllerDelegate,
+         UINavigationControllerDelegate>
 
 @property (weak, nonatomic) NSManagedObjectContext *context;
 

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Candy.h"
 
 @interface MKSCandyDetailViewController : UIViewController
 
-@property (strong, nonatomic) NSString *candy;
+@property (strong, nonatomic) Candy *candy;
 
 @end

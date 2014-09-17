@@ -10,13 +10,18 @@
 
 @interface MKSCandyDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *candyNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *candyImageView;
+
 @end
 
 @implementation MKSCandyDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.candyNameLabel.text = self.candy.candyName;
+    self.candyImageView.image = [UIImage imageWithData:self.candy.candyImage];
 }
 
 - (void)didReceiveMemoryWarning {
