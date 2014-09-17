@@ -8,6 +8,7 @@
 
 #import "MKSCandyTableViewController.h"
 #import "MKSCandyDetailViewController.h"
+#import "MKSNewCandyViewController.h"
 #import "AppDelegate.h"
 #import "Candy.h"
 
@@ -26,7 +27,7 @@
         Candy *candy = [NSEntityDescription insertNewObjectForEntityForName:@"MKSCandy" inManagedObjectContext:self.context];
         [candy setCandyName:@"Candy!"];
         
-        NSError *error = nil;
+        //NSError *error = nil;
         //[self.context save:&error];
         
         _candies = [self fetchAllCandy];
@@ -76,10 +77,21 @@
     return cell;
 }
 
+- (void)viewWillAppear: (BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    MKSCandyDetailViewController *candyDetailViewController = [segue destinationViewController];
-    NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
-    candyDetailViewController.candy = self.candies[selectedIndexPath.row];
+    if ([segue.identifier isEqualToString:@"showCandy"]) {
+        MKSCandyDetailViewController *candyDetailViewController = [segue destinationViewController];
+        NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
+        candyDetailViewController.candy = self.candies[selectedIndexPath.row];
+    } else if ([segue.identifier isEqualToString:@"addCandy"]) {
+        MKSNewCandyViewController *newCandyViewController = [segue destinationViewController];
+        newCandyViewController.context = self.context;
+    }
 }
 
 - (NSArray *)fetchAllCandy {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496F9FF019C90E3A0098AF20 /* MKSNewCandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496F9FEF19C90E3A0098AF20 /* MKSNewCandyViewController.m */; };
 		49BBE78C19C8C05200038698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78B19C8C05200038698 /* main.m */; };
 		49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78E19C8C05200038698 /* AppDelegate.m */; };
 		49BBE79219C8C05200038698 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE79019C8C05200038698 /* CandyStore.xcdatamodeld */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		496F9FEE19C90E3A0098AF20 /* MKSNewCandyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSNewCandyViewController.h; sourceTree = "<group>"; };
+		496F9FEF19C90E3A0098AF20 /* MKSNewCandyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSNewCandyViewController.m; sourceTree = "<group>"; };
 		49BBE78619C8C05200038698 /* CandyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BBE78A19C8C05200038698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BBE78B19C8C05200038698 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				49BBE7B319C8C8CE00038698 /* MKSCandyTableViewController.m */,
 				49BBE7B519C8EEB500038698 /* MKSCandyDetailViewController.h */,
 				49BBE7B619C8EEB500038698 /* MKSCandyDetailViewController.m */,
+				496F9FEE19C90E3A0098AF20 /* MKSNewCandyViewController.h */,
+				496F9FEF19C90E3A0098AF20 /* MKSNewCandyViewController.m */,
 				49BBE79619C8C05200038698 /* Main.storyboard */,
 				49BBE79919C8C05200038698 /* Images.xcassets */,
 				49BBE79B19C8C05200038698 /* LaunchScreen.xib */,
@@ -234,6 +239,7 @@
 			files = (
 				49BBE79219C8C05200038698 /* CandyStore.xcdatamodeld in Sources */,
 				49BBE7B719C8EEB500038698 /* MKSCandyDetailViewController.m in Sources */,
+				496F9FF019C90E3A0098AF20 /* MKSNewCandyViewController.m in Sources */,
 				49BBE7B419C8C8CE00038698 /* MKSCandyTableViewController.m in Sources */,
 				49BBE7C019C8F55900038698 /* Candy.m in Sources */,
 				49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */,
@@ -430,6 +436,7 @@
 				49BBE7AE19C8C05300038698 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49BBE7AF19C8C05300038698 /* Build configuration list for PBXNativeTarget "CandyStoreTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +445,7 @@
 				49BBE7B119C8C05300038698 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

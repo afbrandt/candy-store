@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSData * candyImage;
 @property (nonatomic, retain) NSString * candyLocation;
 
++ (instancetype)createCandyWithContext: (NSManagedObjectContext *)context;
+
 @end

@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AME-da-v6a" kind="show" id="LYd-j3-bgi"/>
+                                    <segue destination="AME-da-v6a" kind="show" identifier="showCandy" id="LYd-j3-bgi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -28,7 +28,13 @@
                             <outlet property="delegate" destination="Dgn-s0-Dvo" id="IBc-Qg-7bs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vVi-8v-Vch"/>
+                    <navigationItem key="navigationItem" id="vVi-8v-Vch">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Iz7-JT-PNC">
+                            <connections>
+                                <segue destination="uCQ-6L-Hpl" kind="show" identifier="addCandy" id="BQ8-Gl-ffh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2n-oI-QHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,19 +52,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detailed View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcT-28-UtE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcT-28-UtE">
                                 <rect key="frame" x="248" y="161" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="03h-06-8YE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="DcT-28-UtE" secondAttribute="centerX" id="98l-K0-8tY"/>
+                            <constraint firstItem="DcT-28-UtE" firstAttribute="top" secondItem="XB5-ia-urR" secondAttribute="bottom" constant="97" id="blB-sh-tEe"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4U-0f-Ryl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2455" y="115"/>
+            <point key="canvasLocation" x="2503" y="219"/>
+        </scene>
+        <!--New Candy View Controller-->
+        <scene sceneID="VUi-AB-Uk1">
+            <objects>
+                <viewController id="uCQ-6L-Hpl" customClass="MKSNewCandyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dem-X5-ho4"/>
+                        <viewControllerLayoutGuide type="bottom" id="XYF-wo-23o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qwK-FT-Ubv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-Ic-Eel">
+                                <rect key="frame" x="194" y="329" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Fln-vN-WxV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-VP-3iL">
+                                <rect key="frame" x="283" y="475" width="34" height="32"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Dgn-s0-Dvo" kind="show" id="BkL-DB-qlv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XYF-wo-23o" firstAttribute="top" secondItem="wbW-VP-3iL" secondAttribute="bottom" constant="93" id="7al-8w-W5n"/>
+                            <constraint firstAttribute="centerX" secondItem="O9u-Ic-Eel" secondAttribute="centerX" id="SXv-gV-kcQ"/>
+                            <constraint firstItem="wbW-VP-3iL" firstAttribute="top" secondItem="O9u-Ic-Eel" secondAttribute="bottom" constant="121" id="blo-GD-Og2"/>
+                            <constraint firstAttribute="centerX" secondItem="wbW-VP-3iL" secondAttribute="centerX" id="jxJ-43-jVN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usM-gO-5N2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2495" y="-627"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CMc-Be-DUG">
@@ -79,4 +135,7 @@
             <point key="canvasLocation" x="981" y="115"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BkL-DB-qlv"/>
+    </inferredMetricsTieBreakers>
 </document>
