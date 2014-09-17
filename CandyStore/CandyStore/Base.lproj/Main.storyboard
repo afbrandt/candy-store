@@ -99,7 +99,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dgn-s0-Dvo" kind="show" id="BkL-DB-qlv"/>
+                                    <segue destination="gBr-zX-WuT" kind="presentation" id="R5u-l2-uOs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,6 +111,9 @@
                             <constraint firstAttribute="centerX" secondItem="wbW-VP-3iL" secondAttribute="centerX" id="jxJ-43-jVN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="candyNameLabel" destination="O9u-Ic-Eel" id="wCH-Bg-uaF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usM-gO-5N2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,7 +138,4 @@
             <point key="canvasLocation" x="981" y="115"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="BkL-DB-qlv"/>
-    </inferredMetricsTieBreakers>
 </document>

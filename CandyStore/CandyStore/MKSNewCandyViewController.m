@@ -10,7 +10,7 @@
 
 @interface MKSNewCandyViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *candyName;
+@property (weak, nonatomic) IBOutlet UITextField *candyNameLabel;
 
 @end
 
@@ -27,11 +27,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (self.candyName) {
+    if (self.candyNameLabel) {
         Candy *candy = [Candy createCandyWithContext:self.context];
         NSError *error = nil;
         
-        [candy setCandyName:self.candyName.text];
+        [candy setCandyName:self.candyNameLabel.text];
         [self.context insertObject:candy];
         [self.context save:&error];
     }

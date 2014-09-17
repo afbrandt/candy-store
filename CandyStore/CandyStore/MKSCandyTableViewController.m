@@ -22,14 +22,13 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
+        _context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
         
-        Candy *candy = [NSEntityDescription insertNewObjectForEntityForName:@"MKSCandy" inManagedObjectContext:self.context];
-        [candy setCandyName:@"Candy!"];
+        //Candy *candy = [NSEntityDescription insertNewObjectForEntityForName:@"MKSCandy" inManagedObjectContext:self.context];
+        //[candy setCandyName:@"Candy!"];
         
         //NSError *error = nil;
         //[self.context save:&error];
-        
         _candies = [self fetchAllCandy];
     }
     
@@ -77,9 +76,19 @@
     return cell;
 }
 
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    Candy *candy = [self.candies objectAtIndex:indexPath.row];
+    NSError *error = nil;
+    [self.context deleteObject:candy];
+    [self.context save:&error];
+    self.candies = [self fetchAllCandy];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 - (void)viewWillAppear: (BOOL)animated {
     [super viewWillAppear: animated];
-    
+    self.candies = [self fetchAllCandy];
     [self.tableView reloadData];
 }
 
