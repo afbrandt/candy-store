@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MKSCandyChatTableViewController : UITableViewController<NSURLSessionDelegate>
+@interface MKSCandyChatTableViewController : UITableViewController<NSURLSessionDelegate, UITextFieldDelegate>
 
 @property (copy, nonatomic) NSMutableArray *chatMessages;
 

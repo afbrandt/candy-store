@@ -11,42 +11,22 @@
 
 @interface MKSCandyChatTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textInputField;
+
 @end
 
+
 @implementation MKSCandyChatTableViewController
+
+const static NSString *URL = @"http://10.0.19.250:3000/chat";
 
 #pragma mark - Controller lifecycle methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.textInputField.delegate = self;
     self.chatMessages = [NSMutableArray array];
-    NSURL *url = [NSURL URLWithString:@"http://10.0.19.250:3000/chat"];
-
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-    
-    [request setHTTPMethod:@"GET"];
-    
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
-    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
-    
-    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        NSInteger responseStatusCode = [httpResponse statusCode];
-        
-        if ( data) {
-            NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            
-            dispatch_async(dispatch_get_main_queue(), ^(void) {
-                self.chatMessages = [NSMutableArray arrayWithArray:[ChatMessage buildChatFromJSON:json]];
-                [self.tableView reloadData];
-            });
-        }
-        
-    }];
-    [dataTask resume];
-    
+    [self updateChat];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -61,22 +41,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
- 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-}
- 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
- 
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
 #pragma mark - Keyboard lifecycle methods
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.textInputField) {
+        [self postChat:self.textInputField.text];
+        self.textInputField.text = @"";
+        [self updateChat];
+    }
+    return NO;
+}
+
+/*
 - (void)keyboardWillShow:(NSNotification *)notification {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -98,6 +74,7 @@
  
     [UIView commitAnimations];
 }
+*/
 
 #pragma mark - Table view data source
 
@@ -115,6 +92,68 @@
     cell.textLabel.text = [self.chatMessages[indexPath.row] message];
     
     return cell;
+}
+
+#pragma mark - HTTP Request handling
+
+- (void)updateChat {
+    NSURL *url = [NSURL URLWithString:URL];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+    
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    
+    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSInteger responseStatusCode = [httpResponse statusCode];
+        
+        if (responseStatusCode == 200 && data) {
+            NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                self.chatMessages = [NSMutableArray arrayWithArray:[ChatMessage buildChatFromJSON:json]];
+                [self.tableView reloadData];
+            });
+        }
+        
+    }];
+    [dataTask resume];
+}
+
+- (void)postChat: (NSString *)message {
+    NSURL *url = [NSURL URLWithString:URL];
+    NSDictionary *chatPayload =  @{@"message": message};
+    NSData *chatJson = [NSJSONSerialization dataWithJSONObject:chatPayload options:0 error:nil];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+    
+    [request setHTTPMethod:@"POST"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    
+    NSURLSessionDataTask *dataTask = [urlSession uploadTaskWithRequest:request fromData:chatJson completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSInteger responseStatusCode = [httpResponse statusCode];
+        
+        if (responseStatusCode == 200 && data) {
+            NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                self.chatMessages = [NSMutableArray arrayWithArray:[ChatMessage buildChatFromJSON:json]];
+                [self.tableView reloadData];
+            });
+        }
+        
+    }];
+    [dataTask resume];
+
 }
 
 /*
