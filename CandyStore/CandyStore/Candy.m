@@ -13,7 +13,8 @@
 
 @dynamic candyName;
 @dynamic candyImage;
-@dynamic candyLocation;
+@dynamic candyXCoordinate;
+@dynamic candyYCoordinate;
 
 + (instancetype)createCandyWithContext: (NSManagedObjectContext *)context {
     Candy *candy = [NSEntityDescription insertNewObjectForEntityForName:@"MKSCandy" inManagedObjectContext:context];

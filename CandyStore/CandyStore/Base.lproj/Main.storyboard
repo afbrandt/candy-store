@@ -30,6 +30,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="vVi-8v-Vch">
+                        <barButtonItem key="leftBarButtonItem" title="Chat" id="Zdd-Nb-DAs">
+                            <connections>
+                                <segue destination="T6y-c5-5lp" kind="show" id="Dh4-TW-1I5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Iz7-JT-PNC">
                             <connections>
                                 <segue destination="uCQ-6L-Hpl" kind="show" identifier="addCandy" id="BQ8-Gl-ffh"/>
@@ -53,8 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Detailed View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcT-28-UtE">
-                                <rect key="frame" x="241" y="416" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcT-28-UtE">
+                                <rect key="frame" x="248" y="416" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="03h-06-8YE"/>
                                 </constraints>
@@ -69,22 +74,121 @@
                                     <constraint firstAttribute="width" constant="409" id="tvr-Mf-oxy"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6E-oY-K6R">
+                                <rect key="frame" x="246" y="492" width="108" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dsV-7s-OcH"/>
+                                    <constraint firstAttribute="width" constant="108" id="nAU-iP-Dif"/>
+                                </constraints>
+                                <state key="normal" title="Show on Map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QdJ-n2-Uks" kind="show" id="c8S-51-IhM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Z6E-oY-K6R" secondAttribute="centerX" id="6wP-ur-Voi"/>
                             <constraint firstAttribute="centerX" secondItem="DcT-28-UtE" secondAttribute="centerX" id="98l-K0-8tY"/>
+                            <constraint firstItem="DcT-28-UtE" firstAttribute="top" secondItem="Ejh-Fa-cF0" secondAttribute="bottom" constant="56" id="FWa-NU-U4A"/>
+                            <constraint firstAttribute="centerX" secondItem="DcT-28-UtE" secondAttribute="centerX" id="Hst-DC-Xr2"/>
+                            <constraint firstItem="wtq-IM-3hR" firstAttribute="top" secondItem="Z6E-oY-K6R" secondAttribute="bottom" constant="78" id="MQh-Sr-xUX"/>
                             <constraint firstItem="Ejh-Fa-cF0" firstAttribute="top" secondItem="XB5-ia-urR" secondAttribute="bottom" constant="32" id="a7t-mu-Ev8"/>
+                            <constraint firstItem="Z6E-oY-K6R" firstAttribute="top" secondItem="DcT-28-UtE" secondAttribute="bottom" constant="55" id="ahT-5d-2RW"/>
                             <constraint firstAttribute="centerX" secondItem="Ejh-Fa-cF0" secondAttribute="centerX" id="ouL-ad-9UW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="candyImageView" destination="Ejh-Fa-cF0" id="4KX-az-j2w"/>
                         <outlet property="candyNameLabel" destination="DcT-28-UtE" id="tlH-Qk-nWq"/>
+                        <segue destination="4s9-wT-9ks" kind="show" id="z6A-4m-CQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4U-0f-Ryl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2503" y="219"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B5F-We-qj1">
+            <objects>
+                <viewController id="4s9-wT-9ks" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jlW-j7-koy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kkz-38-Tf8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bvY-Do-6KU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7FX-Gn-80p">
+                                <rect key="frame" x="-127" y="34" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGo-Qp-38l">
+                                        <rect key="frame" x="120" y="-8" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kld-Oe-dY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3194" y="219"/>
+        </scene>
+        <!--Candy Chat Table View Controller-->
+        <scene sceneID="cR0-eF-OYs">
+            <objects>
+                <tableViewController id="T6y-c5-5lp" customClass="MKSCandyChatTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h0z-5n-k1M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="4Eq-ao-cJz">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Eq-ao-cJz" id="tVW-1l-yJk">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="T6y-c5-5lp" id="fyr-WJ-mtb"/>
+                            <outlet property="delegate" destination="T6y-c5-5lp" id="G72-Gj-hnG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTf-TU-Afk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="924"/>
+        </scene>
+        <!--Candy Map View Controller-->
+        <scene sceneID="Lej-4q-KV4">
+            <objects>
+                <viewController id="QdJ-n2-Uks" customClass="MKSCandyMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GLb-im-dLt"/>
+                        <viewControllerLayoutGuide type="bottom" id="EWX-vQ-CMZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ler-y4-NDk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KmO-F2-HkK">
+                                <rect key="frame" x="0.0" y="13" width="738" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="KmO-F2-HkK" id="IhB-T2-EKk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFW-2s-Wan" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2503" y="996"/>
         </scene>
         <!--New Candy View Controller-->
         <scene sceneID="VUi-AB-Uk1">
@@ -98,8 +202,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name your candy..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-Ic-Eel">
-                                <rect key="frame" x="200" y="411" width="200" height="27"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name your candy..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-Ic-Eel">
+                                <rect key="frame" x="200" y="387" width="200" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="FLk-10-qA2"/>
                                     <constraint firstAttribute="width" constant="200" id="Jjq-3a-Iie"/>
@@ -120,6 +224,13 @@
                                     <segue destination="gBr-zX-WuT" kind="presentation" id="R5u-l2-uOs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-mW-I3N">
+                                <rect key="frame" x="150" y="74" width="301" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="YhY-jn-lTY"/>
+                                    <constraint firstAttribute="height" constant="195" id="snx-Z1-LwW"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-kD-CMJ">
                                 <rect key="frame" x="342" y="313" width="153" height="30"/>
                                 <constraints>
@@ -132,6 +243,12 @@
                                 <connections>
                                     <action selector="useCamera:" destination="uCQ-6L-Hpl" eventType="touchUpInside" id="sX0-MG-Ihf"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urg-At-Odo">
+                                <rect key="frame" x="271" y="448" width="59" height="30"/>
+                                <state key="normal" title="Set GPS">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpG-wz-JHb">
                                 <rect key="frame" x="82" y="313" width="168" height="30"/>
@@ -146,13 +263,6 @@
                                     <action selector="useCameraRoll:" destination="uCQ-6L-Hpl" eventType="touchUpInside" id="yL1-8b-l0b"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-mW-I3N">
-                                <rect key="frame" x="150" y="74" width="301" height="195"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="301" id="YhY-jn-lTY"/>
-                                    <constraint firstAttribute="height" constant="195" id="snx-Z1-LwW"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -195,6 +305,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JA-xP-g6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="981" y="115"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="eM3-K1-khp">
+            <objects>
+                <tableViewController id="bTH-Mc-J8c" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8bi-0S-WIe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CHW-pG-0De">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CHW-pG-0De" id="m7g-dn-vun">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bTH-Mc-J8c" id="ECW-RQ-MSe"/>
+                            <outlet property="delegate" destination="bTH-Mc-J8c" id="O81-VI-IUE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="874-10-siT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9LK-Ub-NQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ns8-hs-oyp">
+            <objects>
+                <navigationController id="cT1-7u-KTH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7iM-h9-Fbg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bTH-Mc-J8c" kind="relationship" relationship="rootViewController" id="1ZM-tb-tvL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d68-bv-Hha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

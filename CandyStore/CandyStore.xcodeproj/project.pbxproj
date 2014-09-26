@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		496F9FF019C90E3A0098AF20 /* MKSNewCandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496F9FEF19C90E3A0098AF20 /* MKSNewCandyViewController.m */; };
+		496F9FF319CA54070098AF20 /* MKSCandyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496F9FF219CA54070098AF20 /* MKSCandyMapViewController.m */; };
+		496F9FF519CA562E0098AF20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496F9FF419CA562E0098AF20 /* MapKit.framework */; };
+		496FE37419D48B4D00DE2C45 /* MKSCandyChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496FE37319D48B4D00DE2C45 /* MKSCandyChatTableViewController.m */; };
+		496FE37719D48BCB00DE2C45 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 496FE37619D48BCB00DE2C45 /* ChatMessage.m */; };
 		49BBE78C19C8C05200038698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78B19C8C05200038698 /* main.m */; };
 		49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78E19C8C05200038698 /* AppDelegate.m */; };
 		49BBE79219C8C05200038698 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE79019C8C05200038698 /* CandyStore.xcdatamodeld */; };
@@ -33,6 +37,13 @@
 /* Begin PBXFileReference section */
 		496F9FEE19C90E3A0098AF20 /* MKSNewCandyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSNewCandyViewController.h; sourceTree = "<group>"; };
 		496F9FEF19C90E3A0098AF20 /* MKSNewCandyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSNewCandyViewController.m; sourceTree = "<group>"; };
+		496F9FF119CA54070098AF20 /* MKSCandyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSCandyMapViewController.h; sourceTree = "<group>"; };
+		496F9FF219CA54070098AF20 /* MKSCandyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSCandyMapViewController.m; sourceTree = "<group>"; };
+		496F9FF419CA562E0098AF20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		496FE37219D48B4D00DE2C45 /* MKSCandyChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSCandyChatTableViewController.h; sourceTree = "<group>"; };
+		496FE37319D48B4D00DE2C45 /* MKSCandyChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSCandyChatTableViewController.m; sourceTree = "<group>"; };
+		496FE37519D48BCB00DE2C45 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
+		496FE37619D48BCB00DE2C45 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
 		49BBE78619C8C05200038698 /* CandyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BBE78A19C8C05200038698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BBE78B19C8C05200038698 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496F9FF519CA562E0098AF20 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +86,7 @@
 		49BBE77D19C8C05200038698 = {
 			isa = PBXGroup;
 			children = (
+				496F9FF419CA562E0098AF20 /* MapKit.framework */,
 				49BBE78819C8C05200038698 /* CandyStore */,
 				49BBE7A519C8C05300038698 /* CandyStoreTests */,
 				49BBE78719C8C05200038698 /* Products */,
@@ -96,12 +109,18 @@
 				49BBE78E19C8C05200038698 /* AppDelegate.m */,
 				49BBE7BE19C8F55900038698 /* Candy.h */,
 				49BBE7BF19C8F55900038698 /* Candy.m */,
+				496FE37519D48BCB00DE2C45 /* ChatMessage.h */,
+				496FE37619D48BCB00DE2C45 /* ChatMessage.m */,
 				49BBE7B219C8C8CE00038698 /* MKSCandyTableViewController.h */,
 				49BBE7B319C8C8CE00038698 /* MKSCandyTableViewController.m */,
 				49BBE7B519C8EEB500038698 /* MKSCandyDetailViewController.h */,
 				49BBE7B619C8EEB500038698 /* MKSCandyDetailViewController.m */,
+				496F9FF119CA54070098AF20 /* MKSCandyMapViewController.h */,
+				496F9FF219CA54070098AF20 /* MKSCandyMapViewController.m */,
 				496F9FEE19C90E3A0098AF20 /* MKSNewCandyViewController.h */,
 				496F9FEF19C90E3A0098AF20 /* MKSNewCandyViewController.m */,
+				496FE37219D48B4D00DE2C45 /* MKSCandyChatTableViewController.h */,
+				496FE37319D48B4D00DE2C45 /* MKSCandyChatTableViewController.m */,
 				49BBE79619C8C05200038698 /* Main.storyboard */,
 				49BBE79919C8C05200038698 /* Images.xcassets */,
 				49BBE79B19C8C05200038698 /* LaunchScreen.xib */,
@@ -186,6 +205,11 @@
 				TargetAttributes = {
 					49BBE78519C8C05200038698 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					49BBE7A119C8C05300038698 = {
 						CreatedOnToolsVersion = 6.0;
@@ -242,8 +266,11 @@
 				496F9FF019C90E3A0098AF20 /* MKSNewCandyViewController.m in Sources */,
 				49BBE7B419C8C8CE00038698 /* MKSCandyTableViewController.m in Sources */,
 				49BBE7C019C8F55900038698 /* Candy.m in Sources */,
+				496F9FF319CA54070098AF20 /* MKSCandyMapViewController.m in Sources */,
+				496FE37419D48B4D00DE2C45 /* MKSCandyChatTableViewController.m in Sources */,
 				49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */,
 				49BBE78C19C8C05200038698 /* main.m in Sources */,
+				496FE37719D48BCB00DE2C45 /* ChatMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
