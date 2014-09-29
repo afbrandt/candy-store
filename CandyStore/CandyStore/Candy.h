@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import <MapKit/MapKit.h>
 
 @interface Candy : NSManagedObject
 
@@ -16,7 +16,10 @@
 @property (nonatomic, retain) NSData * candyImage;
 @property (nonatomic, retain) NSNumber * candyXCoordinate;
 @property (nonatomic, retain) NSNumber * candyYCoordinate;
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 + (instancetype)createCandyWithContext: (NSManagedObjectContext *)context;
+- (void)setCoordinate: (CLLocationCoordinate2D)newCoordinate;
+- (CLLocationCoordinate2D)coordinate;
 
 @end

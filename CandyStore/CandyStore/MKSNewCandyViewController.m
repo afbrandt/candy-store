@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *candyNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *xCoordinateString;
+@property (weak, nonatomic) IBOutlet UITextField *yCoordinateString;
 @property (assign, nonatomic) BOOL newMedia;
 
 - (IBAction)useCamera:(id)sender;
@@ -124,6 +126,9 @@ contextInfo:(void *)contextInfo
         
         [candy setCandyName:self.candyNameLabel.text];
         [candy setCandyImage:imageWrapper];
+        [candy setCandyXCoordinate: [NSNumber numberWithDouble: [self.xCoordinateString.text doubleValue]]];
+        [candy setCandyYCoordinate: [NSNumber numberWithDouble: [self.yCoordinateString.text doubleValue]]];
+        
         [self.context insertObject:candy];
         [self.context save:&error];
     }

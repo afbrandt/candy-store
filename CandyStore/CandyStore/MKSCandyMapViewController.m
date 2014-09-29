@@ -7,6 +7,8 @@
 //
 
 #import "MKSCandyMapViewController.h"
+#import "Candy.h"
+#import "CandyPin.h"
 
 @interface MKSCandyMapViewController ()
 
@@ -18,7 +20,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    CandyPin *pin = [CandyPin new];
+    pin.candy = self.candy;
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.02, 0.02);
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([[self.candy candyXCoordinate] doubleValue], [[self.candy candyYCoordinate] doubleValue]);
+    MKCoordinateRegion region = MKCoordinateRegionMake(location, span);
+    
+    [self.mapView setRegion:region animated:YES];
+    
+    [self.mapView addAnnotation:pin];
+    //[self.mapView setCenterCoordinate:pin.coordinate animated:YES];
+    //[self.mapView selectAnnotation:self.candy animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

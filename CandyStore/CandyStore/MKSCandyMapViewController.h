@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@class Candy;
+
 @interface MKSCandyMapViewController : UIViewController<MKMapViewDelegate>
+
+@property (weak, nonatomic) Candy *candy;
 
 @end

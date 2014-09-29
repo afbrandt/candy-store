@@ -8,7 +8,6 @@
 
 #import "Candy.h"
 
-
 @implementation Candy
 
 @dynamic candyName;
@@ -19,6 +18,14 @@
 + (instancetype)createCandyWithContext: (NSManagedObjectContext *)context {
     Candy *candy = [NSEntityDescription insertNewObjectForEntityForName:@"MKSCandy" inManagedObjectContext:context];
     return candy;
+}
+
+- (void)setCoordinate: (CLLocationCoordinate2D)newCoordinate {
+    self.coordinate = CLLocationCoordinate2DMake([self.candyXCoordinate doubleValue], [self.candyYCoordinate doubleValue]);
+}
+
+- (CLLocationCoordinate2D)coordinate {
+    return CLLocationCoordinate2DMake([self.candyXCoordinate doubleValue], [self.candyYCoordinate doubleValue]);
 }
 
 @end

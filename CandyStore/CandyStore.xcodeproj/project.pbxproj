@@ -12,6 +12,7 @@
 		496F9FF519CA562E0098AF20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496F9FF419CA562E0098AF20 /* MapKit.framework */; };
 		496FE37419D48B4D00DE2C45 /* MKSCandyChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496FE37319D48B4D00DE2C45 /* MKSCandyChatTableViewController.m */; };
 		496FE37719D48BCB00DE2C45 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 496FE37619D48BCB00DE2C45 /* ChatMessage.m */; };
+		496FE37A19D6354200DE2C45 /* CandyPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 496FE37919D6354200DE2C45 /* CandyPin.m */; };
 		49BBE78C19C8C05200038698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78B19C8C05200038698 /* main.m */; };
 		49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE78E19C8C05200038698 /* AppDelegate.m */; };
 		49BBE79219C8C05200038698 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49BBE79019C8C05200038698 /* CandyStore.xcdatamodeld */; };
@@ -44,6 +45,8 @@
 		496FE37319D48B4D00DE2C45 /* MKSCandyChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSCandyChatTableViewController.m; sourceTree = "<group>"; };
 		496FE37519D48BCB00DE2C45 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		496FE37619D48BCB00DE2C45 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
+		496FE37819D6354200DE2C45 /* CandyPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyPin.h; sourceTree = "<group>"; };
+		496FE37919D6354200DE2C45 /* CandyPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyPin.m; sourceTree = "<group>"; };
 		49BBE78619C8C05200038698 /* CandyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BBE78A19C8C05200038698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BBE78B19C8C05200038698 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				49BBE78E19C8C05200038698 /* AppDelegate.m */,
 				49BBE7BE19C8F55900038698 /* Candy.h */,
 				49BBE7BF19C8F55900038698 /* Candy.m */,
+				496FE37819D6354200DE2C45 /* CandyPin.h */,
+				496FE37919D6354200DE2C45 /* CandyPin.m */,
 				496FE37519D48BCB00DE2C45 /* ChatMessage.h */,
 				496FE37619D48BCB00DE2C45 /* ChatMessage.m */,
 				49BBE7B219C8C8CE00038698 /* MKSCandyTableViewController.h */,
@@ -268,6 +273,7 @@
 				49BBE7C019C8F55900038698 /* Candy.m in Sources */,
 				496F9FF319CA54070098AF20 /* MKSCandyMapViewController.m in Sources */,
 				496FE37419D48B4D00DE2C45 /* MKSCandyChatTableViewController.m in Sources */,
+				496FE37A19D6354200DE2C45 /* CandyPin.m in Sources */,
 				49BBE78F19C8C05200038698 /* AppDelegate.m in Sources */,
 				49BBE78C19C8C05200038698 /* main.m in Sources */,
 				496FE37719D48BCB00DE2C45 /* ChatMessage.m in Sources */,
